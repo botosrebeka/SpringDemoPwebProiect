@@ -1,6 +1,7 @@
 package com.example.SpringDemoPwebProiect.controller;
 
-import com.example.SpringDemoPwebProiect.model.Book;
+import com.example.SpringDemoPwebProiect.entity.Book;
+import com.example.SpringDemoPwebProiect.entity.People;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,13 +24,23 @@ public class HelloController {
         return "hello" +name + "!";
     }
 
-    @GetMapping(value = "/createEmployee")
+    @GetMapping(value = "/createBook")
     @ResponseBody
-    public List<Book> createBook(@RequestParam String title, @RequestParam String author, @RequestParam int isbn){
-        return List.of(new Book(title, author, isbn),
-                new Book("aa","aa",12345),
-                new Book("bb","cc",23456),
-                new Book("dd","dd",34567)
+    public List<Book> createBook(@RequestParam int id,@RequestParam String title, @RequestParam String author, @RequestParam int isbn, @RequestParam String release_date){
+        return List.of(new Book(id,title, author, isbn,release_date),
+                new Book(1,"aa","aa",12345,"1234.56.78"),
+                new Book(1,"aa","aa",12345,"1234.12.12"),
+                new Book(1,"aa","aa",12345,"1234.12.12")
+                );
+    }
+
+    @GetMapping(value = "/createPeople")
+    @ResponseBody
+    public List<People> createPeople(@RequestParam int id, @RequestParam String firstname, @RequestParam String lastname, @RequestParam int age){
+        return List.of(new People(id, firstname, lastname, age),
+                new People(1,"first","last", 25),
+                new People(1,"first","last", 25),
+                new People(1,"first","last", 25)
                 );
     }
 }
