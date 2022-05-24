@@ -19,20 +19,6 @@ public class IndexController {
         model.addAttribute("greetings", greetingText);
         model.addAttribute("someText", "Some random text");
 
-        List<Book> bookList = List.of(
-                new Book(1,"aa","aa",12345,"1234.12.12"),
-                new Book(1,"aa","aa",12345,"1234.12.12"),
-                new Book(1,"aa","aa",12345,"1234.12.12")
-              );
-
-        model.addAttribute("bookList", bookList);
-
-        List<People> peopleList = List.of(
-                new People(1,"first","Last",25),
-                new People(1,"first","last", 25),
-                new People(1,"first","last", 25)
-        );
-        model.addAttribute("peopleList",peopleList);
         return "indexPage";
     }
 }

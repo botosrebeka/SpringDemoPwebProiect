@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Books</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
@@ -47,8 +47,13 @@
     </div>
 </nav>
 
-<span th:text = "${greetings}"> </span>
-<span th:text = "${someText}"> </span>
+<div th:each = "book : ${bookList}">
+    <span th:text="${book.id}"></span>
+    <span th:text="${book.title}"></span>
+    <span th:text="${book.author}"></span>
+    <span th:text="${book.isbn}"></span>
+    <span th:text="${book.release_date}"></span>
+</div>
 
 </body>
 </html>

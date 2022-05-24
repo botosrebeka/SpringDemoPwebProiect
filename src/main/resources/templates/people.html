@@ -4,9 +4,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>People</title>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -47,8 +48,12 @@
     </div>
 </nav>
 
-<span th:text = "${greetings}"> </span>
-<span th:text = "${someText}"> </span>
+<div th:each = "people : ${peopleList}">
+    <span th:text="${people.id}"></span>
+    <span th:text="${people.firstname}"></span>
+    <span th:text="${people.lastname}"></span>
+    <span th:text="${people.age}"></span>
+</div>
 
 </body>
 </html>
