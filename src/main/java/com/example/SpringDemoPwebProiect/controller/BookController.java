@@ -40,4 +40,11 @@ public class BookController {
         service.deleteBook(id);
         return  "redirect:/books";
     }
+
+    @PostMapping(value = "/editBook")
+    public String editBook(@RequestParam("id") int id, Model model){
+        Book book = service.findBookById(id);
+        model.addAttribute("book",book);
+        return "addBook";
+    }
 }

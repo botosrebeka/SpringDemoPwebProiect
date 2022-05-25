@@ -40,4 +40,11 @@ public class PeopleController {
         service.deletePeople(id);
         return "redirect:/people";
     }
+
+    @PostMapping(value = "/editPeople")
+    public String editPeople(@RequestParam("id") int id, Model model){
+        People people = service.findPeopleById(id);
+        model.addAttribute("people",people);
+        return "addPeople";
+    }
 }

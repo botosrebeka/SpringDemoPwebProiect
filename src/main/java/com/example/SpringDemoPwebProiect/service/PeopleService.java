@@ -24,4 +24,8 @@ public class PeopleService {
     public void deletePeople(People people){
         peopleRepository.delete(people);
     }
+
+    public People findPeopleById(int id){
+        return peopleRepository.findById(id).get();
+    }
 }
