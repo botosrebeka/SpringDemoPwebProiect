@@ -20,4 +20,8 @@ public class BookService {
     public void saveBook(Book book){
         bookRepository.save(book);
     }
+
+    public void deleteBook(Book book){
+        bookRepository.delete(book);
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PeopleController {
@@ -31,6 +32,12 @@ public class PeopleController {
     @PostMapping(value = "/submitPeople")
     public String submitPeople(@ModelAttribute People people){
         service.savePeople(people);
+        return "redirect:/people";
+    }
+
+    @PostMapping(value = "/deletePeople")
+    public String deletePeople(@RequestParam("id") People id){
+        service.deletePeople(id);
         return "redirect:/people";
     }
 }

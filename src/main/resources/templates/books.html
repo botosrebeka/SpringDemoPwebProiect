@@ -62,6 +62,8 @@
             <th scope="col">Author</th>
             <th scope="col">ISBN</th>
             <th scope="col">Release Date</th>
+            <th scope="col">Delete</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -72,6 +74,18 @@
             <td th:text="${book.author}" ></td>
             <td th:text="${book.isbn}" ></td>
             <td th:text="${book.release_date}" ></td>
+            <td>
+                <form th:action="@{/deleteBook}" th:object="${book}" method="post">
+                    <input class="d-none" name="id" th:value="${book.id}">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/editBook}" th:object="${book}" method="post">
+                    <input class="d-none" name="id" th:value="${book.id}">
+                    <button class="btn btn-primary">Edit</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>

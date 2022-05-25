@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BookController {
@@ -32,5 +33,11 @@ public class BookController {
     public String submitBook(@ModelAttribute Book book){
         service.saveBook(book);
         return "redirect:/books";
+    }
+
+    @PostMapping(value = "/deleteBook")
+    public String deleteBook(@RequestParam("id") Book id){
+        service.deleteBook(id);
+        return  "redirect:/books";
     }
 }

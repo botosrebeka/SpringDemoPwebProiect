@@ -62,6 +62,8 @@
             <th scope="col">First name</th>
             <th scope="col">Last name</th>
             <th scope="col">Age</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -71,6 +73,18 @@
             <td th:text="${people.firstname}" ></td>
             <td th:text="${people.lastname}" ></td>
             <td th:text="${people.age}" ></td>
+            <td>
+                <form th:action="@{/deletePeople}" th:object="${people}" method="post">
+                    <input class="d-none" name="id" th:value="${people.id}">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/editPeople}" th:object="${people}" method="post">
+                    <input class="d-none" name="id" th:value="${people.id}">
+                    <button class="btn btn-primary">Edit</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>

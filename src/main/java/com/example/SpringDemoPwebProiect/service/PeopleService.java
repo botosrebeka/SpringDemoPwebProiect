@@ -20,4 +20,8 @@ public class PeopleService {
     public void savePeople(People people){
         peopleRepository.save(people);
     }
+
+    public void deletePeople(People people){
+        peopleRepository.delete(people);
+    }
 }
