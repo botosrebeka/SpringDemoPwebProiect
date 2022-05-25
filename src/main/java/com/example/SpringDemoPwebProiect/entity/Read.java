@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class Read {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idr;
 
     @Column(name = "id_book")
     private int id_book;
@@ -17,8 +17,8 @@ public class Read {
     @Column(name = "reading_date")
     private int reading_date;
 
-    public Read(int id, int id_book, int id_people, int reading_date) {
-        this.id = id;
+    public Read(int idr, int id_book, int id_people, int reading_date) {
+        this.idr = idr;
         this.id_book = id_book;
         this.id_people = id_people;
         this.reading_date = reading_date;
@@ -26,12 +26,12 @@ public class Read {
 
     public Read(){}
 
-    public int getId() {
-        return id;
+    public int getIdr() {
+        return idr;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdr(int idr) {
+        this.idr = idr;
     }
 
     public int getId_book() {

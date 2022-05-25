@@ -69,19 +69,19 @@
         <tbody>
         <tbody>
         <tr th:each="read : ${readList}">
-            <td th:text="${read.id}" ></td>
+            <td th:text="${read.idr}" ></td>
             <td th:text="${read.id_book}" ></td>
             <td th:text="${read.id_people}" ></td>
             <td th:text="${read.reading_date}" ></td>
             <td>
                 <form th:action="@{/deleteRead}" th:object="${read}" method="post">
-                    <input class="d-none" name="id" th:value="${read.id}">
+                    <input class="d-none" name="idr" th:value="${read.idr}">
                     <button class="btn btn-danger">Delete</button>
                 </form>
             </td>
             <td>
                 <form th:action="@{/editRead}" th:object="${read}" method="post">
-                    <input class="d-none" name="id" th:value="${read.id}">
+                    <input class="d-none" name="idr" th:value="${read.idr}">
                     <button class="btn btn-primary">Edit</button>
                 </form>
             </td>

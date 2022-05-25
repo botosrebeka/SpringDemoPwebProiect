@@ -37,14 +37,14 @@ public class ReadController {
     }
 
     @PostMapping(value = "/deleteRead")
-    public String deleteRead(@RequestParam("id") Read id){
-        service.deleteRead(id);
+    public String deleteRead(@RequestParam("idr") Read idr){
+        service.deleteRead(idr);
         return  "redirect:/reads";
     }
 
     @PostMapping(value = "/editRead")
-    public String editRead(@RequestParam("id") int id, Model model){
-        Read read = service.findReadById(id);
+    public String editRead(@RequestParam("idr") int idr, Model model){
+        Read read = service.findReadById(idr);
         model.addAttribute("read",read);
         return "addRead";
     }

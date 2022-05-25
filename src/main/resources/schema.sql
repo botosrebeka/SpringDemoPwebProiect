@@ -17,11 +17,11 @@ create table t_people
 );
 create table t_read
 (
-    id integer auto_increment,
+    idr integer auto_increment,
     id_book integer,
     id_people integer,
     reading_date varchar(50),
-    primary key(id),
+    primary key(idr),
     foreign key (id_book) references t_book(idb),
     foreign key (id_people) references t_people(idp)
 )

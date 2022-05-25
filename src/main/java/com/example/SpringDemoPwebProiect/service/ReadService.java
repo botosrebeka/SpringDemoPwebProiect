@@ -20,5 +20,5 @@ public class ReadService {
 
     public void deleteRead(Read read){readRepository.delete(read);}
 
-    public Read findReadById(int id){return readRepository.findById(id).get();}
+    public Read findReadById(int idr){return readRepository.findById(idr).get();}
 }
