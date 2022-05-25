@@ -24,7 +24,7 @@ public class HelloController {
         return "hello" +name + "!";
     }
 
-    @GetMapping(value = "/createBook")
+    @GetMapping(value = "/createBooks")
     @ResponseBody
     public List<Book> createBook(@RequestParam int id,@RequestParam String title, @RequestParam String author, @RequestParam int isbn, @RequestParam String release_date){
         return List.of(new Book(id,title, author, isbn,release_date),

@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>People</title>
+    <title>AddPeople</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -54,12 +53,35 @@
     </div>
 </nav>
 
-<div th:each = "people : ${peopleList}">
-    <span th:text="${people.id}"></span>
-    <span th:text="${people.firstname}"></span>
-    <span th:text="${people.lastname}"></span>
-    <span th:text="${people.age}"></span>
-</div>
+<form th:action = "@{/submitPeople}" th:object = "${people}" method = "post">
+
+    <div class = "form-group row">
+        <label>Title:</label>
+        <input th:field = "${people.id}" type="text" >
+    </div>
+
+    <div class = "form-group row">
+        <label>Title:</label>
+        <input th:field = "${people.firstname}" type="text" >
+    </div>
+
+    <div class = "form-group row">
+        <label>Title:</label>
+        <input th:field = "${people.lastname}" type="text" >
+    </div>
+
+    <div class = "form-group row">
+        <label>Title:</label>
+        <input th:field = "${people.age}" type="text" >
+    </div>
+
+    <div class = "form-group row">
+        <button type="submit" class="btn-primary">Submit</button>
+    </div>
+
+
+</form>
 
 </body>
+
 </html>

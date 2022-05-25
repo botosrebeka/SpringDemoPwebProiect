@@ -16,6 +16,9 @@ public class Book {
         this.release_date = release_date;
     }
 
+    public Book(){
+    }
+
     public int getId() {
         return id;
     }

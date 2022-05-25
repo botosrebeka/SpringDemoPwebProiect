@@ -13,7 +13,7 @@ public class People {
         this.lastname = lastname;
         this.age = age;
     }
-
+    public People(){};
     public int getId() {
         return id;
     }
