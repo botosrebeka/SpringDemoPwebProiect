@@ -1,10 +1,20 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "t_people")
 public class People {
 
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column(name = "firstname")
     private String firstname;
+    @Column(name = "lastname")
     private String lastname;
+    @Column(name="age")
     private int age;
 
     public People(int id, String firstname, String lastname, int age) {

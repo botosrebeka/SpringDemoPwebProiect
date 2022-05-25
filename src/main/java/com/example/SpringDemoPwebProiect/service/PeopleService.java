@@ -1,21 +1,23 @@
 package com.example.SpringDemoPwebProiect.service;
 
 import com.example.SpringDemoPwebProiect.entity.People;
+import com.example.SpringDemoPwebProiect.repository.PeopleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PeopleService {
 
-    List<People> peopleList = new ArrayList<>();
+    @Autowired
+    PeopleRepository peopleRepository;
 
     public List<People> getPeopleList(){
-        return peopleList;
+        return peopleRepository.findAll();
     }
 
-    public void save(People people){
-        peopleList.add(people);
+    public void savePeople(People people){
+        peopleRepository.save(people);
     }
 }

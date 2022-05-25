@@ -25,7 +25,6 @@ public class BookController {
     public String createBook(Model model){
         Book book = new Book();
         model.addAttribute("book", book);
-
         return "addBook";
     }
 
