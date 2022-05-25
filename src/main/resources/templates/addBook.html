@@ -53,37 +53,32 @@
     </div>
 </nav>
 
-<form th:action = "@{/submitBook}" th:object = "${book}" method = "post">
+<form style="margin: 25px 50px 5px;" th:action = "@{/submitBook}" th:object = "${book}" method="post">
 
-    <div class = "form-group row">
-        <label>Title:</label>
-        <input th:field = "${book.id}" type="text" >
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>ID</label>
+        <input th:field="${book.id}" class="form-control" readonly>
+    </div>
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label >Title</label>
+        <input th:field="${book.title}" class="form-control">
     </div>
 
-    <div class = "form-group row">
-        <label>Title:</label>
-        <input th:field = "${book.title}" type="text" >
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Author</label>
+        <input th:field="${book.author}" class="form-control">
     </div>
 
-    <div class = "form-group row">
-        <label>Title:</label>
-        <input th:field = "${book.author}" type="text" >
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>ISBN</label>
+        <input th:field="${book.isbn}" class="form-control">
+    </div>
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Release Date</label>
+        <input th:field="${book.release_date}" class="form-control" >
     </div>
 
-    <div class = "form-group row">
-        <label>Title:</label>
-        <input th:field = "${book.isbn}" type="text" >
-    </div>
-
-    <div class = "form-group row">
-        <label>Title:</label>
-        <input th:field = "${book.release_date}" type="text" >
-    </div>
-
-    <div class = "form-group row">
-        <button type="submit" class="btn-primary">Submit</button>
-    </div>
-
+    <button style="margin: 15px 5px 75px;"  type="submit" class="btn btn-primary">Add</button>
 
 </form>
 

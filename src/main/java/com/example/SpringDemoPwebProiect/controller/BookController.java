@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class BookController {
 
@@ -34,13 +31,7 @@ public class BookController {
 
     @PostMapping(value = "/submitBook")
     public String submitBook(@ModelAttribute Book book){
-        System.out.println(book.getId());
-        System.out.println(book.getTitle());
-        System.out.println(book.getAuthor());
-        System.out.println(book.getIsbn());
-        System.out.println(book.getRelease_date());
-        service.save(book);
-
+        service.saveBook(book);
         return "redirect:/books";
     }
 }

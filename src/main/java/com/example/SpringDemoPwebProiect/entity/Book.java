@@ -1,11 +1,22 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "t_book")
 public class Book {
 
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column(name = "title")
     private String title;
+    @Column(name = "author")
     private String author;
+    @Column(name = "isbn")
     private int isbn;
+    @Column(name = "release_date")
     private String release_date;
 
     public Book(int id, String title, String author, int isbn, String release_date) {

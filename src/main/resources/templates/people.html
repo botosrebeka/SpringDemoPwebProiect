@@ -54,12 +54,32 @@
     </div>
 </nav>
 
-<div th:each = "people : ${peopleList}">
-    <span th:text="${people.id}"></span>
-    <span th:text="${people.firstname}"></span>
-    <span th:text="${people.lastname}"></span>
-    <span th:text="${people.age}"></span>
+<div style="margin: 25px 50px 75px 50px">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">People ID</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tbody>
+        <tr th:each="people : ${peopleList}">
+            <td th:text="${people.id}" ></td>
+            <td th:text="${people.firstname}" ></td>
+            <td th:text="${people.lastname}" ></td>
+            <td th:text="${people.age}" ></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
+<div style="margin-bottom: 50px">
+    <button style= "margin-left:30px;" type="button" class="btn btn-primary" href="/addBook">
+        <a  style = "color : white; text-decoration: none;" href="/addPeople">Add People</a>
+    </button>
+</div>
 </body>
 </html>

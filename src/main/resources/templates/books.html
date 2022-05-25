@@ -35,9 +35,9 @@
                         Dropdown
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="/addBook">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                        <li><hr class="dropdown-divider">Valami</li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
@@ -53,13 +53,35 @@
     </div>
 </nav>
 
-<div th:each = "book : ${bookList}">
-    <span th:text="${book.id}"></span>
-    <span th:text="${book.title}"></span>
-    <span th:text="${book.author}"></span>
-    <span th:text="${book.isbn}"></span>
-    <span th:text="${book.release_date}"></span>
+<div style="margin: 25px 50px 75px 50px">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Book ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Release Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tbody>
+        <tr th:each="book : ${bookList}">
+            <td th:text="${book.id}" ></td>
+            <td th:text="${book.title}" ></td>
+            <td th:text="${book.author}" ></td>
+            <td th:text="${book.isbn}" ></td>
+            <td th:text="${book.release_date}" ></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
+
+    <div style="margin-bottom: 50px">
+        <button style= "margin-left:30px;" type="button" class="btn btn-primary" href="/addBook">
+            <a  style = "color : white; text-decoration: none;" href="/addBook">Add Book</a>
+        </button>
+    </div>
 
 </body>
 
