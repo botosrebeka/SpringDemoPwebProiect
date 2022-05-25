@@ -8,7 +8,7 @@ public class Book {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int idb;
 
     @Column(name = "title")
     private String title;
@@ -19,8 +19,8 @@ public class Book {
     @Column(name = "release_date")
     private String release_date;
 
-    public Book(int id, String title, String author, int isbn, String release_date) {
-        this.id = id;
+    public Book(int idb, String title, String author, int isbn, String release_date) {
+        this.idb = idb;
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -30,12 +30,12 @@ public class Book {
     public Book(){
     }
 
-    public int getId() {
-        return id;
+    public int getIdb() {
+        return idb;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdb(int idb) {
+        this.idb = idb;
     }
 
     public String getRelease_date() {

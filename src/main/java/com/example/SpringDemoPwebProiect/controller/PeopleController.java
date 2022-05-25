@@ -36,14 +36,14 @@ public class PeopleController {
     }
 
     @PostMapping(value = "/deletePeople")
-    public String deletePeople(@RequestParam("id") People id){
-        service.deletePeople(id);
+    public String deletePeople(@RequestParam("idp") People idp){
+        service.deletePeople(idp);
         return "redirect:/people";
     }
 
     @PostMapping(value = "/editPeople")
-    public String editPeople(@RequestParam("id") int id, Model model){
-        People people = service.findPeopleById(id);
+    public String editPeople(@RequestParam("idp") int idp, Model model){
+        People people = service.findPeopleByIdp(idp);
         model.addAttribute("people",people);
         return "addPeople";
     }

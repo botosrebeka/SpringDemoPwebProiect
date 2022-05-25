@@ -36,14 +36,14 @@ public class BookController {
     }
 
     @PostMapping(value = "/deleteBook")
-    public String deleteBook(@RequestParam("id") Book id){
-        service.deleteBook(id);
+    public String deleteBook(@RequestParam("idb") Book idb){
+        service.deleteBook(idb);
         return  "redirect:/books";
     }
 
     @PostMapping(value = "/editBook")
-    public String editBook(@RequestParam("id") int id, Model model){
-        Book book = service.findBookById(id);
+    public String editBook(@RequestParam("idb") int idb, Model model){
+        Book book = service.findBookByIdb(idb);
         model.addAttribute("book",book);
         return "addBook";
     }

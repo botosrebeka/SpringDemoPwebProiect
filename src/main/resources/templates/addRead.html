@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>People</title>
+    <title>AddRead</title>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -54,46 +53,31 @@
     </div>
 </nav>
 
-<div style="margin: 25px 50px 75px 50px">
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th scope="col">People ID</th>
-            <th scope="col">First name</th>
-            <th scope="col">Last name</th>
-            <th scope="col">Age</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tbody>
-        <tr th:each="people : ${peopleList}">
-            <td th:text="${people.idp}" ></td>
-            <td th:text="${people.firstname}" ></td>
-            <td th:text="${people.lastname}" ></td>
-            <td th:text="${people.age}" ></td>
-            <td>
-                <form th:action="@{/deletePeople}" th:object="${people}" method="post">
-                    <input class="d-none" name="idp" th:value="${people.idp}">
-                    <button class="btn btn-danger">Delete</button>
-                </form>
-            </td>
-            <td>
-                <form th:action="@{/editPeople}" th:object="${people}" method="post">
-                    <input class="d-none" name="idp" th:value="${people.idp}">
-                    <button class="btn btn-primary">Edit</button>
-                </form>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<form style="margin: 25px 50px 5px;" th:action = "@{/submitRead}" th:object = "${read}" method="post">
 
-<div style="margin-bottom: 50px">
-    <button style= "margin-left:30px;" type="button" class="btn btn-primary" href="/addBook">
-        <a  style = "color : white; text-decoration: none;" href="/addPeople">Add People</a>
-    </button>
-</div>
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>ID</label>
+        <input th:field="${read.id}" class="form-control" readonly>
+    </div>
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label >Title</label>
+        <input th:field="${read.id_book}" class="form-control">
+    </div>
+
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Author</label>
+        <input th:field="${read.id_people}" class="form-control">
+    </div>
+
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>ISBN</label>
+        <input th:field="${read.reading_date}" class="form-control">
+    </div>
+
+    <button style="margin: 15px 5px 75px;"  type="submit" class="btn btn-primary">Add</button>
+
+</form>
+
 </body>
+
 </html>

@@ -1,9 +1,20 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "t_read")
 public class Read {
+
+    @Id
+    @GeneratedValue
     private int id;
+
+    @Column(name = "id_book")
     private int id_book;
+    @Column(name = "id_people")
     private int id_people;
+    @Column(name = "reading_date")
     private int reading_date;
 
     public Read(int id, int id_book, int id_people, int reading_date) {
@@ -12,6 +23,8 @@ public class Read {
         this.id_people = id_people;
         this.reading_date = reading_date;
     }
+
+    public Read(){}
 
     public int getId() {
         return id;

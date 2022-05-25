@@ -25,7 +25,7 @@ public class PeopleService {
         peopleRepository.delete(people);
     }
 
-    public People findPeopleById(int id){
-        return peopleRepository.findById(id).get();
+    public People findPeopleByIdp(int idp){
+        return peopleRepository.findById(idp).get();
     }
 }

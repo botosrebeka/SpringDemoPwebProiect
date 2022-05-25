@@ -8,7 +8,7 @@ public class People {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int idp;
 
     @Column(name = "firstname")
     private String firstname;
@@ -17,19 +17,19 @@ public class People {
     @Column(name="age")
     private int age;
 
-    public People(int id, String firstname, String lastname, int age) {
-        this.id = id;
+    public People(int idp, String firstname, String lastname, int age) {
+        this.idp = idp;
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
     }
     public People(){};
-    public int getId() {
-        return id;
+    public int getIdp() {
+        return idp;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdp(int idp) {
+        this.idp = idp;
     }
 
     public String getFirstname() {

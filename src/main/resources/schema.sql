@@ -1,19 +1,19 @@
 create table t_book
 (
-    id integer auto_increment,
+    idb integer auto_increment,
     title varchar(50),
     author varchar(50),
     isbn integer,
     release_date varchar(50),
-    primary key(id)
+    primary key(idb)
 );
 create table t_people
 (
-    id integer auto_increment,
+    idp integer auto_increment,
     firstname varchar(50),
     lastname varchar(50),
     age integer,
-    primary key(id)
+    primary key(idp)
 );
 create table t_read
 (
@@ -22,6 +22,6 @@ create table t_read
     id_people integer,
     reading_date varchar(50),
     primary key(id),
-    foreign key (id_book) references t_book(id),
-    foreign key (id_people) references t_people(id)
+    foreign key (id_book) references t_book(idb),
+    foreign key (id_people) references t_people(idp)
 )
