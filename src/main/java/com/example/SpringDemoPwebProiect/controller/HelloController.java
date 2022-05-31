@@ -26,11 +26,11 @@ public class HelloController {
 
     @GetMapping(value = "/createBooks")
     @ResponseBody
-    public List<Book> createBook(@RequestParam int id,@RequestParam String title, @RequestParam String author, @RequestParam int isbn, @RequestParam String release_date){
-        return List.of(new Book(id,title, author, isbn,release_date),
-                new Book(1,"aa","aa",12345,"1234.56.78"),
-                new Book(1,"aa","aa",12345,"1234.12.12"),
-                new Book(1,"aa","aa",12345,"1234.12.12")
+    public List<Book> createBook(@RequestParam int id,@RequestParam String title, @RequestParam String author, @RequestParam String isbn, @RequestParam String release_date, @RequestParam String gener, @RequestParam int page_number, @RequestParam String series){
+        return List.of(new Book(id,title, author, isbn,release_date,gener,page_number,series),
+                new Book(1,"aa","aa","12345","1234.56.78","AS",123,"SDF"),
+                new Book(1,"aa","aa","12345","1234.12.12","ASD",123,"ads"),
+                new Book(1,"aa","aa","12345","1234.12.12","ASD",456,"asd")
                 );
     }
 

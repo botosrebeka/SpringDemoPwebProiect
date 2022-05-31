@@ -15,16 +15,49 @@ public class Book {
     @Column(name = "author")
     private String author;
     @Column(name = "isbn")
-    private int isbn;
+    private String isbn;
     @Column(name = "release_date")
     private String release_date;
+    @Column(name = "gener")
+    private String gener;
+    @Column(name = "page_number")
+    private int page_number;
+    @Column(name = "series")
+    private String series;
 
-    public Book(int idb, String title, String author, int isbn, String release_date) {
+    public Book(int idb, String title, String author, String isbn, String release_date, String gener, int page_number, String series) {
         this.idb = idb;
         this.title = title;
         this.author = author;
         this.isbn = isbn;
         this.release_date = release_date;
+        this.gener = gener;
+        this.page_number = page_number;
+        this.series = series;
+    }
+
+    public int getPage_number() {
+        return page_number;
+    }
+
+    public void setPage_number(int page_number) {
+        this.page_number = page_number;
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
+    public void setSeries(String series) {
+        this.series = series;
+    }
+
+    public String getGener() {
+        return gener;
+    }
+
+    public void setGener(String gener) {
+        this.gener = gener;
     }
 
     public Book(){
@@ -62,11 +95,13 @@ public class Book {
         this.author = author;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+
+
 }

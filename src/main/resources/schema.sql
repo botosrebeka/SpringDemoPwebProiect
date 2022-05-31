@@ -3,8 +3,11 @@ create table t_book
     idb integer auto_increment,
     title varchar(50),
     author varchar(50),
-    isbn integer,
+    isbn varchar(12),
     release_date varchar(50),
+    gener varchar(50),
+    page_number int,
+    series varchar(50),
     primary key(idb)
 );
 create table t_people

@@ -62,6 +62,9 @@
             <th scope="col">Author</th>
             <th scope="col">ISBN</th>
             <th scope="col">Release Date</th>
+            <th scope="col">Gener</th>
+            <th scope="col">Page number</th>
+            <th scope="col">Series</th>
             <th scope="col">Delete</th>
             <th scope="col"></th>
         </tr>
@@ -74,6 +77,9 @@
             <td th:text="${book.author}" ></td>
             <td th:text="${book.isbn}" ></td>
             <td th:text="${book.release_date}" ></td>
+            <td th:text="${book.gener}" ></td>
+            <td th:text="${book.page_number}" ></td>
+            <td th:text="${book.series}" ></td>
             <td>
                 <form th:action="@{/deleteBook}" th:object="${book}" method="post">
                     <input class="d-none" name="idb" th:value="${book.idb}">
