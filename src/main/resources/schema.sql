@@ -3,7 +3,7 @@ create table t_book
     idb integer auto_increment,
     title varchar(50),
     author varchar(50),
-    isbn varchar(12),
+    isbn varchar(20),
     release_date varchar(50),
     gener varchar(50),
     page_number int,
@@ -23,7 +23,8 @@ create table t_read
     idr integer auto_increment,
     id_book integer,
     id_people integer,
-    reading_date varchar(50),
+    start_date varchar(50),
+    end_date varchar(50),
     primary key(idr),
     foreign key (id_book) references t_book(idb),
     foreign key (id_people) references t_people(idp)

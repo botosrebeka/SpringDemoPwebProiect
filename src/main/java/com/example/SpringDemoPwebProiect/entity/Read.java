@@ -14,15 +14,19 @@ public class Read {
     private int id_book;
     @Column(name = "id_people")
     private int id_people;
-    @Column(name = "reading_date")
-    private int reading_date;
+    @Column(name = "start_date")
+    private String start_date;
+    @Column(name = "end_date")
+    private String end_date;
 
-    public Read(int idr, int id_book, int id_people, int reading_date) {
+    public Read(int idr, int id_book, int id_people, String start_date, String end_date) {
         this.idr = idr;
         this.id_book = id_book;
         this.id_people = id_people;
-        this.reading_date = reading_date;
+        this.start_date = start_date;
+        this.end_date = end_date;
     }
+
 
     public Read(){}
 
@@ -50,11 +54,19 @@ public class Read {
         this.id_people = id_people;
     }
 
-    public int getReading_date() {
-        return reading_date;
+    public String getStart_date() {
+        return start_date;
     }
 
-    public void setReading_date(int reading_date) {
-        this.reading_date = reading_date;
+    public void setStart_date(String start_date) {
+        this.start_date = start_date;
+    }
+
+    public String getEnd_date() {
+        return end_date;
+    }
+
+    public void setEnd_date(String end_date) {
+        this.end_date = end_date;
     }
 }

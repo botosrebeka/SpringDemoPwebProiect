@@ -6,6 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
+    <style>
+        body {background: rgba(128, 128, 0, 0.1)}
+    </style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-light">
@@ -28,6 +32,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="addPeople">Add People</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reads">Reads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="addRead">Add Read</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -40,7 +50,8 @@
             <th scope="col">ReadID</th>
             <th scope="col">Book</th>
             <th scope="col">People</th>
-            <th scope="col">Date</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
             <th scope="col">Delete</th>
             <th scope="col"></th>
         </tr>
@@ -51,7 +62,8 @@
             <td th:text="${read.idr}" ></td>
             <td th:text="${read.id_book}" ></td>
             <td th:text="${read.id_people}" ></td>
-            <td th:text="${read.reading_date}" ></td>
+            <td th:text="${read.start_date}" ></td>
+            <td th:text="${read.end_date}" ></td>
             <td>
                 <form th:action="@{/deleteRead}" th:object="${read}" method="post">
                     <input class="d-none" name="idr" th:value="${read.idr}">
@@ -70,8 +82,8 @@
 </div>
 
 <div style="margin-bottom: 50px">
-    <button style= "margin-left:30px;" type="button" class="btn btn-primary" href="/addBook">
-        <a  style = "color : white; text-decoration: none;" href="/addBook">Add Book</a>
+    <button style= "margin-left:30px;" type="button" class="btn btn-primary" href="/addRead">
+        <a  style = "color : white; text-decoration: none;" href="/addRead">Add Read</a>
     </button>
 </div>
 
