@@ -1,7 +1,12 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "t_book")
 public class Book {
@@ -35,73 +40,7 @@ public class Book {
         this.page_number = page_number;
         this.series = series;
     }
-
-    public int getPage_number() {
-        return page_number;
-    }
-
-    public void setPage_number(int page_number) {
-        this.page_number = page_number;
-    }
-
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
-    public String getGener() {
-        return gener;
-    }
-
-    public void setGener(String gener) {
-        this.gener = gener;
-    }
-
     public Book(){
     }
-
-    public int getIdb() {
-        return idb;
-    }
-
-    public void setIdb(int idb) {
-        this.idb = idb;
-    }
-
-    public String getRelease_date() {
-        return release_date;
-    }
-
-    public void setRelease_date(String release_date) {
-        this.release_date = release_date;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
 
 }

@@ -1,7 +1,12 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "t_people")
 public class People {
@@ -14,45 +19,24 @@ public class People {
     private String firstname;
     @Column(name = "lastname")
     private String lastname;
+    @Column(name = "username", unique=true)
+    private String username;
+    @Column(name = "email")
+    private String email;
     @Column(name="age")
     private int age;
+    @Column(name = "password")
+    private String password;
 
-    public People(int idp, String firstname, String lastname, int age) {
+    public People(int idp, String firstname, String lastname, String username, String email, int age, String password) {
         this.idp = idp;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.username = username;
+        this.email = email;
         this.age = age;
+        this.password = password;
     }
     public People(){};
-    public int getIdp() {
-        return idp;
-    }
 
-    public void setIdp(int idp) {
-        this.idp = idp;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

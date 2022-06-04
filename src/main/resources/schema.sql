@@ -15,7 +15,10 @@ create table t_people
     idp integer auto_increment,
     firstname varchar(50),
     lastname varchar(50),
+    username varchar(50),
+    email varchar(50),
     age integer,
+    password varchar(50),
     primary key(idp)
 );
 create table t_read

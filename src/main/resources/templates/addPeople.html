@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>AddPeople</title>
+    <title>Register</title>
     <style>
         body {background: rgba(128, 128, 0, 0.1)}
     </style>
@@ -50,18 +50,33 @@
         <input th:field="${people.idp}" class="form-control" readonly>
     </div>
     <div style="margin: 5px 5px 5px;" class="form-group">
-        <label >Title</label>
+        <label >First name</label>
         <input th:field="${people.firstname}" class="form-control">
     </div>
 
     <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Author</label>
+        <label>Last name</label>
         <input th:field="${people.lastname}" class="form-control">
     </div>
 
     <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>ISBN</label>
+        <label>username</label>
+        <input th:field="${people.username}" class="form-control">
+    </div>
+
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Email</label>
+        <input th:field="${people.email}" class="form-control">
+    </div>
+
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Age</label>
         <input th:field="${people.age}" class="form-control">
+    </div>
+
+    <div style="margin: 5px 5px 5px;" class="form-group">
+        <label>Password</label>
+        <input type="password" th:field="${people.password}" class="form-control">
     </div>
 
     <button style="margin: 15px 5px 75px;"  type="submit" class="btn btn-primary">Add</button>

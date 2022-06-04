@@ -1,8 +1,13 @@
 package com.example.SpringDemoPwebProiect.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "t_read")
 public class Read {
 
@@ -27,46 +32,6 @@ public class Read {
         this.end_date = end_date;
     }
 
-
     public Read(){}
 
-    public int getIdr() {
-        return idr;
-    }
-
-    public void setIdr(int idr) {
-        this.idr = idr;
-    }
-
-    public int getId_book() {
-        return id_book;
-    }
-
-    public void setId_book(int id_book) {
-        this.id_book = id_book;
-    }
-
-    public int getId_people() {
-        return id_people;
-    }
-
-    public void setId_people(int id_people) {
-        this.id_people = id_people;
-    }
-
-    public String getStart_date() {
-        return start_date;
-    }
-
-    public void setStart_date(String start_date) {
-        this.start_date = start_date;
-    }
-
-    public String getEnd_date() {
-        return end_date;
-    }
-
-    public void setEnd_date(String end_date) {
-        this.end_date = end_date;
-    }
 }

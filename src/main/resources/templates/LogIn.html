@@ -5,13 +5,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>LogIn</title>
     <style>
         body {background: rgba(128, 128, 0, 0.1)}
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg fixed-top bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="indexPage">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,37 +37,54 @@
                 <li class="nav-item">
                     <a class="nav-link" href="addRead">Add Read</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="LogIn">LogIn</a>
+                <li style="margin-left: 800px;" class="nav-item">
+                    <a class="nav-link" href="addRead">LogIn</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<div style="margin: 20px 50px 20px" class="row">
-    <div style="margin-top: 50px " class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-        <img src="https://i.ibb.co/hgXPVb5/1.png" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
-        <img src="https://i.ibb.co/pf6K7kj/3.png" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape">
-        <img src="https://i.ibb.co/1s1G5GT/5.png" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
+<!-- LogIn Form -->
+<div style="margin: 80px 500px; padding: 25px; border-style:solid black; border-radius: 5px;">
+<form>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="email" id="form2Example1" class="form-control" />
+        <label class="form-label" for="form2Example1">Email address</label>
     </div>
 
-    <div class="col-lg-4 mb-4 mb-lg-0">
-        <h1>Home</h1>
-        <br>
-
-        <p style="margin-bottom: 50px" class="text-center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sapien risus, tristique vel mi vel, auctor rhoncus odio. Sed tristique eget tellus ac placerat. In sollicitudin dapibus mauris. Donec imperdiet, magna ut porta ultrices, ipsum quam lobortis lacus, in bibendum purus ante sit amet magna. Proin convallis mollis tellus auctor lobortis. Sed turpis dui, iaculis id placerat et, rhoncus quis diam. Ut sit amet neque lectus. In sapien risus, tristique vel mi vel, auctor rhoncus odio. Sed tristique eget tellus ac placerat. In sollicitudin dapibus mauris. Donec imperdiet, magna ut porta ultrices, ipsum quam lobortis lacus, in bibendum purus ante sit amet magna. Proin convallis mollis tellus auctor lobortis. Sed turpis dui, iaculis id placerat et, rhoncus quis diam. Ut sit amet neque lectus.</p>
-
-        <img src="https://i.ibb.co/0nNVbDg/4.png" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
-        <img src="https://i.ibb.co/8NxY0ds/6.png" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds">
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="password" id="form2Example2" class="form-control" />
+        <label class="form-label" for="form2Example2">Password</label>
     </div>
 
-    <div style="margin-top: 50px " class="col-lg-4 mb-4 mb-lg-0">
-        <img src="https://i.ibb.co/dQPbZbt/2.png" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
-        <img src="https://i.ibb.co/K6ftfG1/7.png" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park">
-        <img src="https://i.ibb.co/ZS1RCXk/8.png" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Forgot password?</a>
+        </div>
     </div>
+
+    <!-- Submit button -->
+    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+    <div class="text-center">
+        <p>Not a member? <a href="/addPeople">Register</a></p>
+    </div>
+
+</form>
 </div>
+<!-- LogIn Form -->
 
 <!-- Footer -->
 <footer class="text-center text-lg-start bg-light text-muted">

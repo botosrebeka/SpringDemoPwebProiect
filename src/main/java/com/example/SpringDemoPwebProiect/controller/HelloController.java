@@ -36,11 +36,11 @@ public class HelloController {
 
     @GetMapping(value = "/createPeople")
     @ResponseBody
-    public List<People> createPeople(@RequestParam int id, @RequestParam String firstname, @RequestParam String lastname, @RequestParam int age){
-        return List.of(new People(id, firstname, lastname, age),
-                new People(1,"first","last", 25),
-                new People(1,"first","last", 25),
-                new People(1,"first","last", 25)
+    public List<People> createPeople(@RequestParam int id, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String username, @RequestParam String email, @RequestParam int age, @RequestParam String password){
+        return List.of(new People(id, firstname, lastname, username,  email , age, password),
+                new People(1,"first","last","user","emial", 25,"pass"),
+                new People(1,"first","last","user","emial", 25,"pass"),
+                new People(1,"first","last","user","emial", 25,"pass")
                 );
     }
 }
