@@ -25,4 +25,9 @@ public class IndexController {
     public String LogIn(){
         return "LogIn";
     }
+
+    @GetMapping(value = "/HarryPotter")
+    public String HarryPotter(){
+        return "HarryPotter";
+    }
 }

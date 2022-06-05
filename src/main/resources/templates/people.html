@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg fixed-top bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="indexPage">Home</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,27 +23,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="books">Books</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="addBook">Add Book</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="people">People</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="addPeople">Add People</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="reads">Reads</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="addRead">Add Read</a>
+                    <a style="margin-left: 1100px;" class="nav-link" href="LogIn">LogOut</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-<div style="margin: 25px 50px 75px 50px">
+<div style="margin: 70px 50px 75px 50px">
     <table class="table table-hover">
         <thead>
         <tr>
@@ -53,7 +49,6 @@
             <th scope="col">Username</th>
             <th scope="col">Emial</th>
             <th scope="col">Age</th>
-            <th scope="col">Password</th>
             <th scope="col"></th>
             <th scope="col"></th>
         </tr>
@@ -67,7 +62,6 @@
             <td th:text="${people.username}" ></td>
             <td th:text="${people.email}" ></td>
             <td th:text="${people.age}" ></td>
-            <td th:text="${people.password}" ></td>
             <td>
                 <form th:action="@{/deletePeople}" th:object="${people}" method="post">
                     <input class="d-none" name="idp" th:value="${people.idp}">

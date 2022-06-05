@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>AddBooks</title>
+    <title>Harry Potter</title>
     <style>
         body {background: rgba(128, 128, 0, 0.1)}
     </style>
@@ -38,47 +38,7 @@
         </div>
     </div>
 </nav>
-<form style="margin: 70px 50px 5px;" th:action = "@{/submitBook}" th:object = "${book}" method="post">
 
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>ID</label>
-        <input th:field="${book.idb}" class="form-control" readonly>
-    </div>
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label >Title</label>
-        <input th:field="${book.title}" class="form-control">
-    </div>
-
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Author</label>
-        <input th:field="${book.author}" class="form-control">
-    </div>
-
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>ISBN</label>
-        <input th:field="${book.isbn}" class="form-control">
-    </div>
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Release Date</label>
-        <input th:field="${book.release_date}" class="form-control" >
-    </div>
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Gener</label>
-        <input th:field="${book.gener}" class="form-control" >
-    </div>
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Page number</label>
-        <input th:field="${book.page_number}" class="form-control" >
-    </div>
-    <div style="margin: 5px 5px 5px;" class="form-group">
-        <label>Series</label>
-        <input th:field="${book.series}" class="form-control" >
-    </div>
-
-    <button style="margin: 15px 5px 75px;"  type="submit" class="btn btn-primary">Add</button>
-
-</form>
 
 </body>
-
 </html>
