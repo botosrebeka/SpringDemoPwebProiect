@@ -30,4 +30,19 @@ public class IndexController {
     public String HarryPotter(){
         return "HarryPotter";
     }
+
+    @GetMapping(value = "/recommendations")
+    public String recommendations(){
+        return "recommendations";
+    }
+
+    @GetMapping(value = "/Martian")
+    public String martian(){
+        return "Martian";
+    }
+
+    @GetMapping(value = "/Outlander")
+    public String Outlander(){
+        return "Outlander";
+    }
 }
