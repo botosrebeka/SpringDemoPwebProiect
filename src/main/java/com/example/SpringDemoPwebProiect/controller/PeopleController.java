@@ -1,5 +1,6 @@
 package com.example.SpringDemoPwebProiect.controller;
 
+import com.example.SpringDemoPwebProiect.dto.PeopleDto;
 import com.example.SpringDemoPwebProiect.entity.People;
 import com.example.SpringDemoPwebProiect.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class PeopleController {
 
@@ -18,20 +21,22 @@ public class PeopleController {
 
     @GetMapping(value = "/people")
     public String getIndex(Model model){
+        List<PeopleDto> peopleDtoList = service.getPeopleList();
         model.addAttribute("peopleList",service.getPeopleList());
+
         return "people";
     }
 
     @GetMapping(value = "/addPeople")
     public String createPeople(Model model){
-        People people = new People();
-        model.addAttribute("people", people);
+        PeopleDto peopleDto = new PeopleDto();
+        model.addAttribute("people", peopleDto);
         return "addPeople";
     }
 
     @PostMapping(value = "/submitPeople")
-    public String submitPeople(@ModelAttribute People people){
-        service.savePeople(people);
+    public String submitPeople(@ModelAttribute PeopleDto peopleDto){
+        service.savePeople(peopleDto);
         return "redirect:/people";
     }
 
@@ -43,8 +48,15 @@ public class PeopleController {
 
     @PostMapping(value = "/editPeople")
     public String editPeople(@RequestParam("idp") int idp, Model model){
-        People people = service.findPeopleByIdp(idp);
-        model.addAttribute("people",people);
+        PeopleDto peopleDto = service.findPeopleByIdp(idp);
+        model.addAttribute("people",peopleDto);
         return "addPeople";
+    }
+
+    @PostMapping(value = "logInPeople")
+    public String logInPeople(){
+        boolean people = service.login();
+        if(people){return "redirect:/indexPage";}
+        return "redirect:/indexPage";
     }
 }

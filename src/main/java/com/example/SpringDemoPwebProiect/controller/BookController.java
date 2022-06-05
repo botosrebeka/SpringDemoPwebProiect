@@ -1,5 +1,6 @@
 package com.example.SpringDemoPwebProiect.controller;
 
+import com.example.SpringDemoPwebProiect.dto.BookDto;
 import com.example.SpringDemoPwebProiect.entity.Book;
 import com.example.SpringDemoPwebProiect.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class BookController {
 
@@ -18,20 +21,21 @@ public class BookController {
 
     @GetMapping(value = "/books")
     public String getIndex(Model model){
-        model.addAttribute("bookList", service.getBookList());
+        List<BookDto> bookDtoList = service.getBookList();
+        model.addAttribute("bookList", bookDtoList);
         return "books";
     }
 
     @GetMapping(value = "/addBook")
     public String createBook(Model model){
-        Book book = new Book();
-        model.addAttribute("book", book);
+        BookDto bookDto = new BookDto();
+        model.addAttribute("book", bookDto);
         return "addBook";
     }
 
     @PostMapping(value = "/submitBook")
-    public String submitBook(@ModelAttribute Book book){
-        service.saveBook(book);
+    public String submitBook(@ModelAttribute BookDto bookDto){
+        service.saveBook(bookDto);
         return "redirect:/books";
     }
 
@@ -43,8 +47,8 @@ public class BookController {
 
     @PostMapping(value = "/editBook")
     public String editBook(@RequestParam("idb") int idb, Model model){
-        Book book = service.findBookByIdb(idb);
-        model.addAttribute("book",book);
+        BookDto bookDto = service.findBookByIdb(idb);
+        model.addAttribute("book",bookDto);
         return "addBook";
     }
 }

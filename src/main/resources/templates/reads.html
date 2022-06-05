@@ -48,8 +48,10 @@
         <thead>
         <tr>
             <th scope="col">ReadID</th>
-            <th scope="col">Book</th>
-            <th scope="col">People</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Delete</th>
@@ -60,8 +62,10 @@
         <tbody>
         <tr th:each="read : ${readList}">
             <td th:text="${read.idr}" ></td>
-            <td th:text="${read.id_book}" ></td>
-            <td th:text="${read.id_people}" ></td>
+            <td th:text="${read.people_firstname}" ></td>
+            <td th:text="${read.people_lastname}" ></td>
+            <td th:text="${read.book_title}" ></td>
+            <td th:text="${read.book_author}" ></td>
             <td th:text="${read.start_date}" ></td>
             <td th:text="${read.end_date}" ></td>
             <td>

@@ -1,14 +1,17 @@
 package com.example.SpringDemoPwebProiect.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "t_people")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class People {
 
     @Id
@@ -28,15 +31,8 @@ public class People {
     @Column(name = "password")
     private String password;
 
-    public People(int idp, String firstname, String lastname, String username, String email, int age, String password) {
-        this.idp = idp;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.email = email;
-        this.age = age;
-        this.password = password;
-    }
-    public People(){};
+
+    @OneToMany(mappedBy = "people",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    List<Read> readList;
 
 }

@@ -1,11 +1,14 @@
 package com.example.SpringDemoPwebProiect.service;
 
+import com.example.SpringDemoPwebProiect.dto.PeopleDto;
 import com.example.SpringDemoPwebProiect.entity.People;
+import com.example.SpringDemoPwebProiect.mapper.PeopleMapper;
 import com.example.SpringDemoPwebProiect.repository.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PeopleService {
@@ -13,11 +16,17 @@ public class PeopleService {
     @Autowired
     PeopleRepository peopleRepository;
 
-    public List<People> getPeopleList(){
-        return peopleRepository.findAll();
+    @Autowired
+    PeopleMapper mapper;
+
+    public List<PeopleDto> getPeopleList(){
+        return peopleRepository.findAll().stream()
+                .map(c -> mapper.mapPeopleDto(c))
+                .collect(Collectors.toList());
     }
 
-    public void savePeople(People people){
+    public void savePeople(PeopleDto peopleDto){
+        People people = mapper.mapPeople(peopleDto);
         peopleRepository.save(people);
     }
 
@@ -25,7 +34,12 @@ public class PeopleService {
         peopleRepository.delete(people);
     }
 
-    public People findPeopleByIdp(int idp){
-        return peopleRepository.findById(idp).get();
+    public PeopleDto findPeopleByIdp(int idp){
+        People people = peopleRepository.findById(idp).get();
+        return mapper.mapPeopleDto(people);
+    }
+
+    public boolean login(){
+        return true;
     }
 }

@@ -1,14 +1,17 @@
 package com.example.SpringDemoPwebProiect.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "t_book")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
     @Id
@@ -30,17 +33,7 @@ public class Book {
     @Column(name = "series")
     private String series;
 
-    public Book(int idb, String title, String author, String isbn, String release_date, String gener, int page_number, String series) {
-        this.idb = idb;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.release_date = release_date;
-        this.gener = gener;
-        this.page_number = page_number;
-        this.series = series;
-    }
-    public Book(){
-    }
 
+    @OneToMany(mappedBy = "book",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    List<Read> readList;
 }
