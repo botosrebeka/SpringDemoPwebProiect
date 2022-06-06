@@ -1,7 +1,10 @@
 insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('Harry Potter and the Sorcerers Stone','J.K.Rowling','9781781103821 ','June 26th 1997','Fantasy',309,'Harry Potter #1')
 insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('Game of Thrones','George R.R. Martin','9780553588484','August 6th 1996','Fantasy',835,'A Song of Ice and Fire #1')
 insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('Outlander','Diana Gabaldon','9780440242949','June 1st 1991','Historical Fiction',850,'Outlander #1')
-insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('Dragonfly in Amber','Diana Gabaldon','9780440242949','July 1st 1992','Historical Fiction',947,'Outlander #2')
+insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('A Clash of Kings','George R.R. Martin','9780553381696','May 28th 2002','Fantasy',969,'A Song of Ice and Fire #2')
+insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('A Storm of Swords','George R.R. Martin','9780553573428','March 4th 2003','Fantasy',1177,'A Song of Ice and Fire #3')
+insert into t_book(title,author,isbn,release_date,gener,page_number,series) values ('Pride and Prejudice','Jane Austen','9780553573428',' January 28th 1813','Classics',279,null)
+
 insert into t_people(firstname,lastname,username,email,age,password) values ('Andrea','Munteanu','andimunte','andimunte@email.com',20,'pasd')
 insert into t_people(firstname,lastname,username,email,age,password) values ('Iulia','Popa','popai','popai@email.com',20,'pasd')
 insert into t_people(firstname,lastname,username,email,age,password) values ('Sorina','Radu','radus','radus@email.com',20,'pasd')
@@ -10,6 +13,6 @@ insert into t_people(firstname,lastname,username,email,age,password) values ('Ro
 insert into t_read(id_book, id_people, start_date, end_date) values (1,1,'13.05.2021','18.05.2021')
 insert into t_read(id_book, id_people, start_date, end_date) values (1,2,'01.10.2021','29.10.2021')
 insert into t_read(id_book, id_people, start_date, end_date) values (2,2,'03.02.2022','15.02.2022')
-insert into t_read(id_book, id_people, start_date, end_date) values (2,3,'15.12.2012','15.02.2022')
-insert into t_read(id_book, id_people, start_date, end_date) values (2,4,'03.01.2022','15.06.2022')
+insert into t_read(id_book, id_people, start_date, end_date) values (3,2,'15.12.2012','15.02.2022')
+insert into t_read(id_book, id_people, start_date, end_date) values (4,3,'03.01.2022','15.06.2022')
 

@@ -45,4 +45,14 @@ public class IndexController {
     public String Outlander(){
         return "Outlander";
     }
+
+    @GetMapping(value = "/Thursday")
+    public String Thursday(){
+        return "Thursday";
+    }
+
+    @GetMapping(value = "/BillySummers")
+    public String BillySummers(){
+        return "BillySummers";
+    }
 }
